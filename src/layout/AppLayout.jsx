@@ -77,6 +77,7 @@ function AppLayout({ children }) {
     return (
       <>
         <Navbar />
+        {children}
       </>
     );
 }

@@ -31,6 +31,7 @@ function HomePage() {
 
   return (
     <>
+      home page test
       {/* watch swiper */}
       {/* <HomePageHero /> */}
       {/* top slides */}

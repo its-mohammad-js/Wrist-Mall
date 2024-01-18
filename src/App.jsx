@@ -26,18 +26,18 @@ function App() {
     <Provider store={store}>
       <AppLayout>
         <Toaster />
-        {/* <Routes>
-          <Route path="/WristMall/" element={<HomePage />} />
-          <Route path="/WristMall/Shop" element={<ShopPage />} />
-          <Route path="/WristMall/SignUp" element={<SignUpPage />} />
-          <Route path="/WristMall/SignIn" element={<SignInPage />} />
-          <Route
+        <Routes>
+          <Route path="/Wrist-Mall/" element={<HomePage />} />
+          {/* <Route path="/Wrist-Mall/Shop" element={<ShopPage />} /> */}
+          {/* <Route path="/WristMall/SignUp" element={<SignUpPage />} /> */}
+          {/* <Route path="/WristMall/SignIn" element={<SignInPage />} /> */}
+          {/* <Route
             path="/WristMall/SingleWatch/:id"
             element={<SingleProductPage />}
-          />
-          <Route path="/WristMall/Cart" element={<CartPage />} />
-          <Route path="/WristMall/AboutMe" element={<AboutMePage />} />
-        </Routes> */}
+          /> */}
+          {/* <Route path="/WristMall/Cart" element={<CartPage />} /> */}
+          {/* <Route path="/WristMall/AboutMe" element={<AboutMePage />} /> */}
+        </Routes>
       </AppLayout>
     </Provider>
   );

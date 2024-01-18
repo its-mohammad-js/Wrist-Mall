@@ -39,7 +39,7 @@ function Navbar() {
 
         {/* menu btn */}
         <div className="">
-          <GiHamburgerMenu className="text-3xl text-accent-500" />
+          <GiHamburgerMenu className="text-3xl text-accent-500 cursor-pointer" />
         </div>
       </div>
     </div>
