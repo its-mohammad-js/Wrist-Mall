@@ -30,7 +30,7 @@ function Navbar() {
     <div className="mx-auto 2xl:max-w-screen-2xl">
       <div
         id="wrapper"
-        className="w-full flex items-center justify-between px-4 py-2"
+        className="w-full flex items-center justify-between px-4 py-3"
       >
         {/* logo  */}
         <div className="w-16">
