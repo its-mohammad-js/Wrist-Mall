@@ -75,10 +75,10 @@ function AppLayout({ children }) {
 
   if (true)
     return (
-      <>
+      <div className="bg-white dark:bg-secondary-400 min-h-screen">
         <Navbar />
         {children}
-      </>
+      </div>
     );
 }
 

@@ -5,10 +5,11 @@ import { fetchProducts } from "../../rudex/products/productActions";
 import Slider from "react-slick";
 import { TbTruckDelivery } from "react-icons/tb";
 import { BsWatch } from "react-icons/bs";
-import { FaMoneyBillWave } from "react-icons/fa";
+import { FaMoneyBillWave, FaStar } from "react-icons/fa";
 import Slide from "../../components/Slides/Slide";
 import {
   categoriesInformation,
+  reviewsInfo,
   slidesInformation,
   stampToTime,
 } from "../../constants";
@@ -31,17 +32,16 @@ function HomePage() {
 
   return (
     <>
-      home page test
       {/* watch swiper */}
-      {/* <HomePageHero /> */}
+      <HomePageHero />
+      {/* categories section */}
+      <TopProductsSection productsData={productsData} />
       {/* top slides */}
       {/* {slidesInformation.map((info) => (
         <Slide key={info.id} {...info} />
       ))} */}
       {/* news section */}
       {/* <NewsSection /> */}
-      {/* categories section */}
-      {/* <CategoriesSection /> */}
       {/* overview section */}
       {/* {productsData.length && <OverviewSection productsData={productsData} />} */}
     </>
@@ -50,58 +50,101 @@ function HomePage() {
 
 export default HomePage;
 
-function CategoriesSection() {
-  return (
-    <div className="container mx-auto 2xl:max-w-screen-2xl">
-      <div
-        id="wrapper"
-        className="w-full h-[550px] md:h-[700px] flex flex-col bg-white-100 bg-opacity-95 relative"
-      >
-        {/* background image & color */}
-        <div className="w-full h-full z-0 absolute">
-          <div id="imageWrapper" className="w-full h-full">
-            <img
-              src={categoriesInformation.backgorungUrl}
-              alt="categoreis-section-background"
-              className="w-full h-full object-cover opacity-30"
-            />
-          </div>
-        </div>
-
-        {/* title */}
-        <h2 className="z-10 text-center text-xl md:text-4xl font-extrabold bg-opacity-5 py-4">
-          Category
+function TopProductsSection({ productsData }) {
+  if (productsData.length)
+    return (
+      <div className="mx-auto 2xl:max-w-screen-2xl">
+        {/* tile */}
+        <h2 className="text-start text-3xl text-secondary-400 dark:text-primary-50 px-6 py-4">
+          <span className="border-b-4 border-accent-700 dark:border-accent-500/25 cursor-pointer">
+            Top Products
+          </span>
         </h2>
+        {/* content wrapper */}
+        <div
+          id="wrapper"
+          className="flex flex-col gap-y-8 sm:flex-row items-center justify-between gap-x-4 sm:h-[410px]"
+        >
+          {/* top products */}
+          <div className="bg-gradient-to-br from-primary-200 via-accent-500/70 to-primary-600 dark:from-secondary-400 dark:via-accent-800/40 dark:to-secondary-400 w-11/12 px-4 py-2 sm:w-3/4 h-full rounded-tr-[30%] sm:rounded-tr-[150px] flex items-center sm:justify-center gap-x-4 sm:gap-x-10 overflow-y-auto">
+            {productsData.map(
+              (product) =>
+                product.isOnTop && (
+                  <div
+                    key={product.id}
+                    className="rounded-xl w-20 sm:w-48 sm:h-2/3 flex flex-col items-center bg-primary-50/50 dark:bg-secondary-400/75 group"
+                  >
+                    <div className="h-full w-full py-6">
+                      <img
+                        src={product.thumbnail}
+                        alt={product.name}
+                        className="h-full w-full object-contain group-hover:scale-110 transition-all"
+                      />
+                    </div>
 
-        {/* category slides */}
-        <div className="flex flex-wrap items-center justify-evenly z-10 py-4 gap-y-6">
-          {categoriesInformation.listOfcategories.map((c, index) => (
-            <div
-              key={index}
-              className="w-36 h-32 md:w-72 md:h-64 relative group"
-            >
-              {/* category background image */}
-              <img
-                loading="lazy"
-                src={c.bgUrl}
-                alt={c.categoryTitle}
-                className="object-cover w-full h-full"
-              />
-              {/* category title */}
-              <div
-                data-aos="zoom-in"
-                className="absolute inset-0 bg-Buff-500 bg-opacity-20  border-4 border-white-100 backdrop-blur-sm group-hover:backdrop-blur-none flex justify-center items-center"
-              >
-                <h3 className="text-white-100 text-sm md:text-lg neon-title py-1 group-hover:-translate-y-4 transition-all duration-500">
-                  {c.categoryTitle}
-                </h3>
+                    <div className="w-full h-full rounded-b-xl cursor-pointer px-3">
+                      <h2 className="text-left line-clamp-1 w-full mt-3 font-semibold dark:text-primary-300">
+                        {product.name}
+                      </h2>
+
+                      <p className="dark:text-secondary-100/100">
+                        ${product.price}
+                      </p>
+                    </div>
+                  </div>
+                )
+            )}
+          </div>
+
+          {/* reviews section */}
+          <div className="sm:w-1/4 h-full flex items-center justify-center px-2">
+            {/* content wrapper */}
+            <div className="sm:w-11/12 h-full rounded-3xl bg-gradient-to-br from-primary-200 via-accent-500/70 to-primary-600 dark:from-secondary-400 dark:via-accent-800/20 dark:to-secondary-400 px-6 py-4">
+              {/* main title */}
+              <h2 className="flex items-center justify-between">
+                <p className="text-secondary-400 dark:text-primary-200 text-2xl font-black">
+                  REVIEWS
+                </p>
+                <p className=" dark:text-primary-200 text-lg font-semibold">
+                  240+&nbsp;
+                  <span className="text-secondary-100 dark:text-primary-400">
+                    users
+                  </span>
+                </p>
+              </h2>
+              {/* summary caption */}
+              <p className="text-sm dark:text-primary-600">
+                98% of users recommend shopping here because the items sold are
+                original and reliable, what our loyal customers say.
+              </p>
+              {/* reviews */}
+              <div className="flex flex-col items-center gap-y-3 py-2 cursor-pointer">
+                {reviewsInfo.map((review, index) => (
+                  <div
+                    key={index}
+                    className="w-full group bg-secondary-100 dark:bg-primary-50 dark:bg-opacity-20 hover:bg-opacity-20 hover:scale-105 transition-all bg-opacity-10 rounded-md px-1 py-0.5"
+                  >
+                    <div className="flex items-center justify-between">
+                      <p className="dark:text-primary-50 font-semibold">
+                        {review.userName}
+                      </p>
+                      <p className="text-sm dark:text-primary-50 flex items-center gap-x-0.5">
+                        {review.point}
+                        <FaStar className="text-accent-700 group-hover:scale-125 group-hover:rotate-12 transition-all" />
+                      </p>
+                    </div>
+
+                    <p className="text-xs dark:text-primary-50/70 py-0.5">
+                      {review.comment}
+                    </p>
+                  </div>
+                ))}
               </div>
             </div>
-          ))}
+          </div>
         </div>
       </div>
-    </div>
-  );
+    );
 }
 
 function NewsSection() {

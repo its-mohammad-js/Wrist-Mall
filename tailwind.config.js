@@ -164,12 +164,36 @@ export default {
             opacity: 0.2,
           },
         },
+        zoomIn: {
+          "0%": {
+            transform: "translate(10px, -40px)",
+            opacity: 1,
+          },
+          "20%": {
+            transform: "translate(10px, 10px)",
+            opacity: 0.8,
+          },
+          "40%": {
+            transform: "translate(10px, 20px)",
+            opacity: 0.6,
+          },
+          "60%": {
+            transform: "translate(10px, 30px)",
+            opacity: 0.6,
+          },
+          "80%": {
+            transform: "translate(10px, 40px)",
+            opacity: 0.4,
+          },
+          "100%": {
+            transform: "translate(10px, 40px)",
+            opacity: 0.2,
+          },
+        },
       },
       animation: {
         swapeOut: "swapeOut 0.8s linear",
         swapeIn: "swapeIn 0.8s linear",
-        fadeIn: "fadeIn 0.8s linear",
-        fadeOut: "fadeOut 0.8s linear",
         typing: "typing 1s steps(40, end)",
         infinityType: "typing 1.5s steps(40, end) infinite",
         upDown: "upDown 1s linear infinite",

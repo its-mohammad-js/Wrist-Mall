@@ -1,4 +1,8 @@
 import * as Yup from "yup";
+import rolexLogo from "/public/logoBrands/Rolex.png";
+import patekLogo from "/public/logoBrands/patek-philippe.svg";
+import audemarsLogo from "/public/logoBrands/audemars-piguet.svg";
+import citizenLogo from "/public/logoBrands/citizen-watch-logo.svg";
 
 const slidesInformation = [
   {
@@ -94,11 +98,10 @@ const supportedProductFilters = {
 };
 
 const routesInfo = [
-  { title: "Home", path: "/WristMall/" },
-  { title: "Shop", path: "/WristMall/Shop" },
-  { title: "Cart", path: "/WristMall/Cart" },
-  // { title: "Blogs", path: "/WristMall/Blogs" },
-  { title: "َAbout Me", path: "/WristMall/AboutMe" },
+  { title: "Home", path: "/Wrist-Mall/" },
+  { title: "Shop", path: "/Wrist-Mall/Shop" },
+  { title: "Cart", path: "/Wrist-Mall/Cart" },
+  { title: "About me", path: "/Wrist-Mall/AboutMe" },
 ];
 
 const signInPageBgUrl =
@@ -151,6 +154,34 @@ const scrollUp = () => {
   window.scrollTo(0, 0);
 };
 
+const brandsinfo = [
+  { logoSrc: rolexLogo, BrandName: "Rolex" },
+  { logoSrc: patekLogo, BrandName: "Patek Philippe" },
+  { logoSrc: audemarsLogo, BrandName: "Audemars Piguet" },
+  { logoSrc: citizenLogo, BrandName: "Citizen" },
+];
+
+const reviewsInfo = [
+  {
+    userName: "Raffialdo",
+    point: 4.8,
+    comment:
+      "Trusted marketplace 🛍️ buy branded watches ⌚️ of the highest quality",
+  },
+  {
+    userName: "Raffialdo",
+    point: 4,
+    comment:
+      "Wrist Mall revolutionized my watch shopping! ⌚️ User-friendly app, amazing collection, swift delivery, and stellar customer service! 🎉",
+  },
+  {
+    userName: "Diana Anggita",
+    point: 5.0,
+    comment:
+      "Absolutely fantastic selection and service! 😍👌 Can't get enough of the amazing watches they offer. ⌚️⌚️",
+  },
+];
+
 export {
   slidesInformation,
   categoriesInformation,
@@ -165,4 +196,6 @@ export {
   cartPageBgUrl,
   developerInfo,
   scrollUp,
+  brandsinfo,
+  reviewsInfo,
 };
