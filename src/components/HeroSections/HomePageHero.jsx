@@ -172,7 +172,7 @@ function WatchSwiper({ topProucts }) {
             <div className="h-3/5 sm:h-full group bg-gradient-to-br from-primary-50 via-accent-50 to-accent-700 dark:from-secondary-400 dark:via-secondary-300 dark:to-accent-400/40 rounded-t-xl sm:rounded-xl flex items-center justify-center relative">
               {/* gradient ball */}
               <div
-                className={`w-5/6 h-5/6 group-hover:scale-105 transition-all absolute bg-gradient-to-br from-accent-700 via-accent-500 to-primary-50 dark:via-secondary-300 dark:to-secondary-400 rounded-full mx-1`}
+                className={`w-4/6 h-4/6 group-hover:scale-105 transition-all absolute bg-gradient-to-br from-accent-700 via-accent-500 to-primary-50 dark:via-secondary-300 dark:to-secondary-400 rounded-full mx-1`}
               ></div>
               {/* glaasy bg */}
               <div className="h-1/2 w-full bg-accent-600 bg-opacity-0 backdrop-blur-sm absolute z-0 self-end rounded-3xl"></div>
@@ -188,7 +188,7 @@ function WatchSwiper({ topProucts }) {
                     key={index}
                     src={product.thumbnail}
                     alt="watchPicture"
-                    className="h-48 sm:h-64 w-full object-contain"
+                    className="w-36 h-36 sm:h-64 object-contain"
                   />
                 ))}
               </Slider>
