@@ -35,7 +35,7 @@ function HomePage() {
       {/* watch swiper */}
       <HomePageHero />
       {/* categories section */}
-      <TopProductsSection productsData={productsData} />
+      {/* <TopProductsSection productsData={productsData} /> */}
       {/* top slides */}
       {/* {slidesInformation.map((info) => (
         <Slide key={info.id} {...info} />

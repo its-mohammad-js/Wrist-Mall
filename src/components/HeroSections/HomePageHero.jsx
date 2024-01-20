@@ -46,14 +46,13 @@ function WatchSwiper({ topProucts }) {
   // slick.js settings
   const settings = {
     infinite: true,
-    speed: 500,
+    speed: 1000,
     slidesToShow: 1,
     slidesToScroll: 1,
     appendDots: appendDotsFunc,
     dots: true,
     arrows: false,
     useTransform: true,
-    // fade : true
   };
 
   // change selected watch state on swipe
@@ -116,7 +115,7 @@ function WatchSwiper({ topProucts }) {
     window.scrollTo({ top: 400 });
   };
 
-  if (topProucts.length > 0 && topProucts)
+  if (topProucts[selectedWatch])
     return (
       <div className="mx-auto 2xl:max-w-screen-2xl h-[500px]">
         <div
@@ -172,26 +171,18 @@ function WatchSwiper({ topProucts }) {
             <div className="h-3/5 sm:h-full group bg-gradient-to-br from-primary-50 via-accent-50 to-accent-700 dark:from-secondary-400 dark:via-secondary-300 dark:to-accent-400/40 rounded-t-xl sm:rounded-xl flex items-center justify-center relative">
               {/* gradient ball */}
               <div
-                className={`w-4/6 h-4/6 group-hover:scale-105 transition-all absolute bg-gradient-to-br from-accent-700 via-accent-500 to-primary-50 dark:via-secondary-300 dark:to-secondary-400 rounded-full mx-1`}
+                className={`w-5/6 h-5/6 group-hover:scale-105 transition-all absolute bg-gradient-to-br from-accent-700 via-accent-500 to-primary-50 dark:via-secondary-300 dark:to-secondary-400 rounded-full mx-1`}
               ></div>
               {/* glaasy bg */}
               <div className="h-1/2 w-full bg-accent-600 bg-opacity-0 backdrop-blur-sm absolute z-0 self-end rounded-3xl"></div>
               {/* watch slider */}
-              <Slider
-                ref={sliderRef}
-                {...settings}
-                afterChange={afterSwipe}
-                className="h-5/6 w-full z-20 px-6 py-6 flex items-center"
-              >
-                {topProucts.map((product, index) => (
-                  <img
-                    key={index}
-                    src={product.thumbnail}
-                    alt="watchPicture"
-                    className="w-full h-full bg-red-500 sm:h-64 object-contain"
-                  />
-                ))}
-              </Slider>
+              <div className="h-full w-40 z-20 bg-red-500">
+                <Slider {...settings}>
+                  {topProucts.map((product, index) => (
+                    <img src={product.thumbnail} alt="" />
+                  ))}
+                </Slider>
+              </div>
             </div>
 
             {/* description (mobile vision) */}
