@@ -188,7 +188,7 @@ function WatchSwiper({ topProucts }) {
                     key={index}
                     src={product.thumbnail}
                     alt="watchPicture"
-                    className="w-36 h-36 sm:h-64 object-contain"
+                    className="w-full h-full bg-red-500 sm:h-64 object-contain"
                   />
                 ))}
               </Slider>
