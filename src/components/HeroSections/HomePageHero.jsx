@@ -151,14 +151,14 @@ function WatchSwiper({ topProucts }) {
                   Collaborate with the best brands :
                 </p>
 
-                <div className="flex items-center w-full gap-x-8 py-6">
+                <div className="flex items-center w-4/5 gap-x-8 py-6">
                   {brandsinfo.map((brand, index) => {
                     return (
                       <img
                         key={index}
                         src={brand.logoSrc}
                         alt={brand.BrandName}
-                        className="w-32 h-10 object-contain hover:-translate-y-4 transition-all duration-500 dark:bg-primary-50 dark:bg-opacity-5 rounded-md"
+                        className="w-1/4 h-10 object-contain hover:-translate-y-4 transition-all duration-500 dark:bg-primary-50 dark:bg-opacity-5 rounded-md"
                       />
                     );
                   })}
@@ -172,7 +172,7 @@ function WatchSwiper({ topProucts }) {
             <div className="h-3/5 sm:h-full group bg-gradient-to-br from-primary-50 via-accent-50 to-accent-700 dark:from-secondary-400 dark:via-secondary-300 dark:to-accent-400/40 rounded-t-xl sm:rounded-xl flex items-center justify-center relative">
               {/* gradient ball */}
               <div
-                className={`w-4/6 h-4/6 group-hover:scale-105 transition-all absolute bg-gradient-to-br from-accent-700 via-accent-500 to-primary-50 dark:via-secondary-300 dark:to-secondary-400 rounded-full mx-1`}
+                className={`w-5/6 h-5/6 group-hover:scale-105 transition-all absolute bg-gradient-to-br from-accent-700 via-accent-500 to-primary-50 dark:via-secondary-300 dark:to-secondary-400 rounded-full mx-1`}
               ></div>
               {/* glaasy bg */}
               <div className="h-1/2 w-full bg-accent-600 bg-opacity-0 backdrop-blur-sm absolute z-0 self-end rounded-3xl"></div>

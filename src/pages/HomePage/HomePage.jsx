@@ -72,7 +72,7 @@ function TopProductsSection({ productsData }) {
                 product.isOnTop && (
                   <div
                     key={product.id}
-                    className="rounded-xl w-20 sm:w-48 sm:h-2/3 flex flex-col items-center bg-primary-50/50 dark:bg-secondary-400/75 group"
+                    className="rounded-xl w-20 sm:w-1/5 flex flex-col items-center bg-primary-50/50 dark:bg-secondary-400/75 group"
                   >
                     <div className="h-full w-full py-6">
                       <img
@@ -83,7 +83,7 @@ function TopProductsSection({ productsData }) {
                     </div>
 
                     <div className="w-full h-full rounded-b-xl cursor-pointer px-3">
-                      <h2 className="text-left line-clamp-1 w-full mt-3 font-semibold dark:text-primary-300">
+                      <h2 className="text-left text-xs sm:text-lg line-clamp-1 w-full mt-3 font-semibold dark:text-primary-300">
                         {product.name}
                       </h2>
 
