@@ -34,8 +34,8 @@ function HomePage() {
     <>
       {/* watch swiper */}
       <HomePageHero />
-      {/* categories section */}
-      {/* <TopProductsSection productsData={productsData} /> */}
+      {/* top products and reviews section */}
+      <TopProductsSection productsData={productsData} />
       {/* top slides */}
       {/* {slidesInformation.map((info) => (
         <Slide key={info.id} {...info} />
@@ -60,30 +60,35 @@ function TopProductsSection({ productsData }) {
             Top Products
           </span>
         </h2>
+        <p className="px-4 py-2 sm:hidden dark:text-primary-50">
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repellat
+          perferendis quisquam iste, necessitatibus voluptate maxime. Laborum
+          repudiandae maiores culpa dolorum!
+        </p>
         {/* content wrapper */}
         <div
           id="wrapper"
-          className="flex flex-col gap-y-8 sm:flex-row items-center justify-between gap-x-4 sm:h-[410px]"
+          className="flex flex-col gap-y-8 sm:flex-row items-center justify-between gap-x-4"
         >
           {/* top products */}
-          <div className="bg-gradient-to-br from-primary-200 via-accent-500/70 to-primary-600 dark:from-secondary-400 dark:via-accent-800/40 dark:to-secondary-400 w-11/12 px-4 py-2 sm:w-3/4 h-full rounded-tr-[30%] sm:rounded-tr-[150px] flex items-center sm:justify-center gap-x-4 sm:gap-x-10 overflow-y-auto">
+          <div className="sm:bg-gradient-to-br from-primary-200 via-accent-500/70 to-primary-600 dark:from-secondary-400 dark:via-accent-800/40 dark:to-secondary-400 w-11/12 px-4 py-2 sm:w-3/4 h-auto sm:h-[420px] rounded-tr-[0%] sm:rounded-tr-[150px] flex flex-col gap-y-5 sm:flex-row items-center sm:justify-center gap-x-4 sm:gap-x-10 overflow-y-auto">
             {productsData.map(
               (product) =>
                 product.isOnTop && (
                   <div
                     key={product.id}
-                    className="rounded-xl w-20 sm:w-1/5 flex flex-col items-center bg-primary-50/50 dark:bg-secondary-400/75 group"
+                    className="rounded-xl w-full sm:w-1/5 flex flex-col items-center bg-primary-50/50 dark:bg-secondary-300 group"
                   >
-                    <div className="h-full w-full py-6">
+                    <div className="h-full w-full sm:py-6 flex items-center justify-center px-4 py-4">
                       <img
                         src={product.thumbnail}
                         alt={product.name}
-                        className="h-full w-full object-contain group-hover:scale-110 transition-all"
+                        className="w-4/6 sm:h-full sm:w-full object-contain group-hover:scale-110 transition-all"
                       />
                     </div>
 
-                    <div className="w-full h-full rounded-b-xl cursor-pointer px-3">
-                      <h2 className="text-left text-xs sm:text-lg line-clamp-1 w-full mt-3 font-semibold dark:text-primary-300">
+                    <div className="w-full h-full rounded-b-xl cursor-pointer px-3 py-2">
+                      <h2 className="text-left text-lg line-clamp-1 w-full mt-3 font-semibold dark:text-primary-300">
                         {product.name}
                       </h2>
 
@@ -101,7 +106,7 @@ function TopProductsSection({ productsData }) {
             {/* content wrapper */}
             <div className="sm:w-11/12 h-full rounded-3xl bg-gradient-to-br from-primary-200 via-accent-500/70 to-primary-600 dark:from-secondary-400 dark:via-accent-800/20 dark:to-secondary-400 px-6 py-4">
               {/* main title */}
-              <h2 className="flex items-center justify-between">
+              <h2 className="flex items-center justify-between flex-wrap">
                 <p className="text-secondary-400 dark:text-primary-200 text-2xl font-black">
                   REVIEWS
                 </p>
@@ -113,19 +118,19 @@ function TopProductsSection({ productsData }) {
                 </p>
               </h2>
               {/* summary caption */}
-              <p className="text-sm dark:text-primary-600">
+              <p className="text-xs dark:text-primary-600 hidden xl:inline-block">
                 98% of users recommend shopping here because the items sold are
                 original and reliable, what our loyal customers say.
               </p>
               {/* reviews */}
-              <div className="flex flex-col items-center gap-y-3 py-2 cursor-pointer">
+              <div className="flex flex-col items-center gap-y-1 px-1 py-2 cursor-pointer rounded-xl">
                 {reviewsInfo.map((review, index) => (
                   <div
                     key={index}
-                    className="w-full group bg-secondary-100 dark:bg-primary-50 dark:bg-opacity-20 hover:bg-opacity-20 hover:scale-105 transition-all bg-opacity-10 rounded-md px-1 py-0.5"
+                    className="w-full h-1/2 group bg-secondary-100 dark:bg-primary-50 dark:bg-opacity-20 hover:bg-opacity-20 hover:scale-105 transition-all bg-opacity-10 rounded-md px-1 py-0.5"
                   >
-                    <div className="flex items-center justify-between">
-                      <p className="dark:text-primary-50 font-semibold">
+                    <div className="h-10 flex items-center justify-between flex-wrap">
+                      <p className="dark:text-primary-50 font-semibold text-sm line-clamp-1">
                         {review.userName}
                       </p>
                       <p className="text-sm dark:text-primary-50 flex items-center gap-x-0.5">
@@ -134,7 +139,7 @@ function TopProductsSection({ productsData }) {
                       </p>
                     </div>
 
-                    <p className="text-xs dark:text-primary-50/70 py-0.5">
+                    <p className="text-xs dark:text-primary-50/70 py-0.5 line-clamp-3 xl:line-clamp-5">
                       {review.comment}
                     </p>
                   </div>

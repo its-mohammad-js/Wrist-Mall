@@ -176,10 +176,20 @@ function WatchSwiper({ topProucts }) {
               {/* glaasy bg */}
               <div className="h-1/2 w-full bg-accent-600 bg-opacity-0 backdrop-blur-sm absolute z-0 self-end rounded-3xl"></div>
               {/* watch slider */}
-              <div className="h-full w-40 z-20 bg-red-500">
-                <Slider {...settings}>
+              <div className="h-5/6 w-full z-20">
+                <Slider
+                  ref={sliderRef}
+                  afterChange={afterSwipe}
+                  {...settings}
+                  className="h-full w-full z-20 relative py-4"
+                >
                   {topProucts.map((product, index) => (
-                    <img src={product.thumbnail} alt="" />
+                    <img
+                      key={index}
+                      src={product.thumbnail}
+                      alt={product.name}
+                      className="h-48 sm:h-80 w-full object-contain cursor-pointer"
+                    />
                   ))}
                 </Slider>
               </div>
