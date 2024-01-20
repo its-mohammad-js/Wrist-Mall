@@ -177,13 +177,22 @@ function WatchSwiper({ topProucts }) {
               {/* glaasy bg */}
               <div className="h-1/2 w-full bg-accent-600 bg-opacity-0 backdrop-blur-sm absolute z-0 self-end rounded-3xl"></div>
               {/* watch slider */}
-              <div className="z-20 h-3/4">
-                <img
-                  src={topProucts[0].thumbnail}
-                  alt=""
-                  className="w-full h-full"
-                />
-              </div>
+              <Slider
+                ref={sliderRef}
+                {...settings}
+                afterChange={afterSwipe}
+                className="h-5/6 w-full z-20 px-6 py-6 flex items-center"
+              >
+                {topProucts.length &&
+                  topProucts.map((product, index) => (
+                    <img
+                      key={index}
+                      src={product.thumbnail}
+                      alt="watchPicture"
+                      className="w-full h-full bg-red-500 sm:h-64 object-contain"
+                    />
+                  ))}
+              </Slider>
             </div>
 
             {/* description (mobile vision) */}
