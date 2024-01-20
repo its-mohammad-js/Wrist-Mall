@@ -116,7 +116,7 @@ function WatchSwiper({ topProucts }) {
     window.scrollTo({ top: 400 });
   };
 
-  if (topProucts.length)
+  if (topProucts.length > 0 && topProucts)
     return (
       <div className="mx-auto 2xl:max-w-screen-2xl h-[500px]">
         <div
@@ -183,15 +183,14 @@ function WatchSwiper({ topProucts }) {
                 afterChange={afterSwipe}
                 className="h-5/6 w-full z-20 px-6 py-6 flex items-center"
               >
-                {topProucts.length &&
-                  topProucts.map((product, index) => (
-                    <img
-                      key={index}
-                      src={product.thumbnail}
-                      alt="watchPicture"
-                      className="w-full h-full bg-red-500 sm:h-64 object-contain"
-                    />
-                  ))}
+                {topProucts.map((product, index) => (
+                  <img
+                    key={index}
+                    src={product.thumbnail}
+                    alt="watchPicture"
+                    className="w-full h-full bg-red-500 sm:h-64 object-contain"
+                  />
+                ))}
               </Slider>
             </div>
 
