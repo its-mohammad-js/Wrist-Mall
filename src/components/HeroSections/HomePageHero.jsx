@@ -174,7 +174,7 @@ function WatchSwiper({ topProucts }) {
                 className={`w-5/6 h-5/6 group-hover:scale-105 transition-all absolute bg-gradient-to-br from-accent-700 via-accent-500 to-primary-50 dark:via-secondary-300 dark:to-secondary-400 rounded-full mx-1`}
               ></div>
               {/* glaasy bg */}
-              <div className="h-1/2 w-full bg-accent-600 bg-opacity-0 backdrop-blur-sm absolute z-0 self-end rounded-3xl"></div>
+              <div className="h-1/2 w-full bg-accent-800 bg-opacity-5 backdrop-blur-sm absolute z-0 self-end rounded-3xl"></div>
               {/* watch slider */}
               <div className="h-5/6 w-full z-20">
                 <Slider

@@ -4,7 +4,7 @@ import patekLogo from "/public/logoBrands/patek-philippe.svg";
 import audemarsLogo from "/public/logoBrands/audemars-piguet.svg";
 import citizenLogo from "/public/logoBrands/citizen-watch-logo.svg";
 
-const slidesInformation = [
+export const slidesInformation = [
   {
     id: 0,
     backgroundUrl:
@@ -104,14 +104,17 @@ const routesInfo = [
   { title: "About me", path: "/Wrist-Mall/AboutMe" },
 ];
 
-const signInPageBgUrl =
+export const signInPageBgUrl =
   "https://firebasestorage.googleapis.com/v0/b/wristmall-6f3a3.appspot.com/o/background%20images%2Fsign%20in%20page%20bg.jpg?alt=media&token=78a77d6d-7959-4b0c-a838-54328b716c63";
 
-const signUpPageBgUrl =
+export const signUpPageBgUrl =
   "https://firebasestorage.googleapis.com/v0/b/wristmall-6f3a3.appspot.com/o/background%20images%2Fsign%20up%20page%20bg.jpg?alt=media&token=4dcb63f6-e7f5-4d81-9ee6-f513541c778d";
 
-const cartPageBgUrl =
+export const cartPageBgUrl =
   "https://firebasestorage.googleapis.com/v0/b/wristmall-6f3a3.appspot.com/o/background%20images%2Fcart%20page%20bg.jpg?alt=media&token=a71bc5ea-938e-4dfc-a3f5-b4ccffe62639";
+
+export const exploreSectionBg =
+  "https://firebasestorage.googleapis.com/v0/b/wristmall-6f3a3.appspot.com/o/background%20images%2FExpore%20section%20bg%2001.jpg?alt=media&token=dd94d1a2-4065-43d1-8ef4-646c22f51a46";
 
 const SignInValidationSchema = Yup.object({
   name: Yup.string()
@@ -211,17 +214,13 @@ const faqInfo = [
 ];
 
 export {
-  slidesInformation,
   categoriesInformation,
   stampToTime,
   shopHeroSectionInfo,
   supportedProductFilters,
   routesInfo,
-  signInPageBgUrl,
   SignInValidationSchema,
   SignInInitialValues,
-  signUpPageBgUrl,
-  cartPageBgUrl,
   developerInfo,
   scrollUp,
   brandsinfo,

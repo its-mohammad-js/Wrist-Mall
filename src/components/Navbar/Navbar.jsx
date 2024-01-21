@@ -114,15 +114,17 @@ function Navbar() {
         {/* mobile menu */}
         <div
           className={`${
-            menuIsOpen ? "w-full visible" : "w-0 invisible"
-          } fixed inset-0 h-screen flex z-50 transition-all duration-500`}
+            menuIsOpen ? "visible" : "invisible"
+          } fixed inset-0 h-screen flex z-50 transition-all`}
         >
-          <div className="w-3/4 h-full bg-primary-50 dark:bg-secondary-200">
-            <ul
-              className={`${
-                menuIsOpen ? "visible opacity-100" : "invisible opacity-0"
-              } transition-all flex flex-col py-2`}
-            >
+          <div
+            className={`${
+              menuIsOpen
+                ? "visible w-3/4 opacity-100"
+                : "invisible w-0 opacity-0"
+            } transition-all h-full bg-primary-50 dark:bg-secondary-200 duration-500`}
+          >
+            <ul className={`flex flex-col py-2`}>
               <div className="dark:text-primary-50 flex items-center font-semibold group px-2 mb-2">
                 <span className="text-3xl sm:text-4xl sm: mx-0.5 group-hover:scale-110 group-hover:rotate-12 transition-all">
                   <BsWatch className="" />
@@ -138,19 +140,19 @@ function Navbar() {
                 <Link
                   key={index}
                   to={route.path}
-                  className="px-4 py-1 text-primary-50 text-xl my-2 relative flex items-center gap-x-2 group"
+                  className="px-4 py-1 dark:text-primary-50 text-xl my-2 flex items-center gap-x-2 group"
                 >
                   <FaArrowLeft className="rotate-180" />
-                  {route.title}
+                  <span className="border-b-4 border-accent-300 dark:border-accent-700">
+                    {route.title}
+                  </span>
                 </Link>
               ))}
             </ul>
           </div>
           <div
             onClick={() => setMenuIsOpen(false)}
-            className={`${
-              !menuIsOpen && "opacity-0"
-            } w-1/4 h-full bg-secondary-400 bg-opacity-70`}
+            className={`-z-10 w-full absolute h-full bg-secondary-400 bg-opacity-70`}
           >
             back
           </div>

@@ -9,6 +9,7 @@ import { FaMoneyBillWave, FaStar } from "react-icons/fa";
 import Slide from "../../components/Slides/Slide";
 import {
   categoriesInformation,
+  exploreSectionBg,
   faqInfo,
   reviewsInfo,
   slidesInformation,
@@ -38,14 +39,20 @@ function HomePage() {
       <HomePageHero />
       {/* top products and reviews section */}
       <TopProductsSection productsData={productsData} />
+      {/* explore section */}
+      <ExploreSection />
       {/* top slides */}
       {slidesInformation.map((info) => (
         <Slide key={info.id} {...info} />
       ))}
+      {/* categories section */}
+      <div className="mx-auto 2xl:max-w-screen-2xl bg-red-400">category</div>
       {/* features section */}
       <div className="mx-auto 2xl:max-w-screen-2xl my-4">
         <h2 className="text-2xl sm:text-3xl px-4 py-2 sm:px-6 sm:py-5 text-secondary-400 dark:text-primary-50">
-          <span className="border-b-4 border-accent-700">Why Wrist Mall ?</span>
+          <span className="border-b-4 border-accent-700 dark:border-accent-800">
+            Why Wrist Mall ?
+          </span>
         </h2>
 
         <div className="flex flex-col sm:flex-row items-center justify-evenly gap-y-4 px-4 py-2 sm:py-4">
@@ -90,10 +97,10 @@ function HomePage() {
           </div>
         </div>
       </div>
+      {/* news section */}
+      <NewsSection />
       {/* faq section */}
       <FaqSection />
-      {/* news section */}
-      {/* <NewsSection /> */}
       {/* overview section */}
       {/* {productsData.length && <OverviewSection productsData={productsData} />} */}
     </>
@@ -105,7 +112,7 @@ export default HomePage;
 function TopProductsSection({ productsData }) {
   if (productsData.length)
     return (
-      <div className="mx-auto 2xl:max-w-screen-2xl mb-8 md:-mb-2">
+      <div className="mx-auto 2xl:max-w-screen-2xl mb-8 md:mb-0">
         {/* tile */}
         <h2 className="text-start text-3xl text-secondary-400 dark:text-primary-50 px-4 sm:px-6 py-4">
           <span className="border-b-4 border-accent-700 dark:border-accent-500/25 cursor-pointer">
@@ -204,6 +211,137 @@ function TopProductsSection({ productsData }) {
     );
 }
 
+function ExploreSection() {
+  //  products state
+  const { productsData } = useSelector((state) => state.products);
+  const [selectedProduct, setSelectedProduct] = useState(0);
+
+  const settings = {
+    autoplay: true,
+    vertical: true,
+    touchMove: false,
+    autoplaySpeed: 5000,
+    arrows: false,
+  };
+
+  if (productsData[selectedProduct])
+    return (
+      <div className="mx-auto 2xl:max-w-screen-2xl mt-8 mb-2">
+        <div id="wrapper" className="flex flex-col items-center">
+          {/* title */}
+          <h2 className="text-3xl xl:text-8xl text-center dark:text-primary-200 leading-[3rem] xl:leading-[8rem] cursor-pointer">
+            Explore{" "}
+            <span className="border-b-4 border-accent-700">Largest</span> Watch
+            &nbsp;
+            <p className="text-accent-700">Marketplace</p>
+          </h2>
+
+          {/* main content */}
+          <div className="xl:h-96 w-full px-4 py-2 flex flex-col md:flex-row items-center justify-start gap-x-4 gap-y-4">
+            {/* watch gallery */}
+            <div
+              data-aos-delay="500"
+              data-aos="fade-up"
+              className="grid grid-rows-6 grid-cols-6 gap-x-2 w-full xl:w-1/3 h-full"
+            >
+              {/* header card */}
+              <div className="bg-secondary-300 rounded-xl col-span-4 row-span-3 flex flex-col justify-evenly mx-2 px-4 py-2 hover:-translate-y-2 transition-all duration-500">
+                <h4 className="text-primary-50 xl:text-xl font-bold px-2 py-1">
+                  Explore watches from the most reputable dealers across world
+                </h4>
+
+                <div className="w-full flex items-center justify-between my-2 gap-x-2">
+                  <button className="px-2 py-1 bg-secondary-400 rounded-xl w-2/3">
+                    <span className="font-bold text-primary-50">Explore</span>
+                  </button>
+                  <button className="px-2 py-1 bg-primary-50 rounded-xl w-1/3">
+                    <span className="">Buy</span>
+                  </button>
+                </div>
+              </div>
+              {/* summary title */}
+              <div className="col-span-2 row-span-2 dark:bg-primary-50 rounded-xl flex items-center justify-center px-2 py-1">
+                <p className="text-center text-xs xl:text-sm">
+                  Timeless Elegance: Explore the Finest Watch Collections at
+                  Wrist Mall
+                </p>
+              </div>
+              {/* watch primary image */}
+              <div className="col-start-1 col-end-5 row-start-4 row-end-7 py-2">
+                <Slider
+                  {...settings}
+                  vertical={false}
+                  touchMove={true}
+                  className="w-full h-full"
+                >
+                  {productsData[selectedProduct].images.map(
+                    (imgUrl, index) =>
+                      index > 0 && (
+                        <img
+                          key={imgUrl}
+                          src={imgUrl}
+                          className="w-full xl:h-44 object-cover rounded-xl"
+                        />
+                      )
+                  )}
+                </Slider>
+              </div>
+              {/* main text */}
+              <div className="flex items-center dark:bg-black rounded-xl my-2 row-start-3 col-span-2 row-span-2">
+                <span className="text-secondary-400 dark:text-primary-50 text-center text-xs xl:text-lg font-semibold cursor-pointer">
+                  Over{" "}
+                  <strong className="border-b-2 border-b-accent-300">
+                    50,000
+                  </strong>{" "}
+                  costumers !
+                </span>
+              </div>
+              {/* footer text */}
+              <div className="bg-gradient-to-br from-accent-500 via-accent-700 to-accent-900 flex items-center justify-center row-span-2 col-span-2 px-2 py-1 rounded-xl">
+                <p className="text-xs xl:text-sm text-secondary-300 font-bold cursor-pointer">
+                  Unveiling Innovation: Dive into Cutting-Edge Watches at Wrist
+                  Mall
+                </p>
+              </div>
+            </div>
+            {/* watch pic */}
+            <div
+              data-aos-delay="700"
+              data-aos="fade-up"
+              className="w-full xl:w-1/3 h-full flex items-center justify-center py-2"
+            >
+              <Slider
+                afterChange={(e) => setSelectedProduct(e)}
+                {...settings}
+                className="w-full h-full"
+              >
+                {productsData.map((product) => (
+                  <img
+                    key={product.id}
+                    src={product.thumbnail}
+                    className="w-full h-80 object-contain"
+                  />
+                ))}
+              </Slider>
+            </div>
+            {/* summary sectrion */}
+            <div
+              data-aos-delay="1000"
+              data-aos="fade-up"
+              className="w-full xl:w-1/3 h-full"
+            >
+              <img
+                src={exploreSectionBg}
+                alt="explore section background"
+                className="w-full h-full object-cover rounded-xl"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+}
+
 function FaqSection() {
   const [answerShow, setAnswer] = useState(null);
 
@@ -288,36 +426,36 @@ function NewsSection() {
     arrows: false,
   };
 
-  if (loading) return <p>Loading...</p>;
-
   if (!loading)
     return (
-      <div className="container mx-auto 2xl:max-w-screen-2xl">
+      <div className="mx-auto 2xl:max-w-screen-2xl">
         <div id="wrapper" className="px-4 py-2 flex flex-col gap-y-4">
           {/* title  */}
-          <h2 className="neon-title !text-Buff-300 text-3xl font-extrabold">
-            Last News
+          <h2 className="text-4xl text-secondary-400 dark:text-primary-50">
+            <span className="border-b-4 border-accent-700 dark:border-accent-800">
+              Last News
+            </span>
           </h2>
 
           {/* news slider */}
-          <Slider {...settings}>
+          <Slider autoplay {...settings}>
             {newsData.map((news) => {
               return (
                 <div
                   key={news.id}
-                  className="text-EerieBlack-600 w-full h-full px-2"
+                  className="w-full h-full px-2 xl:px-4 xl:py-2"
                 >
-                  <h3 className="text-center line-clamp-1 text-lg md:text-xl text-white-100">
+                  <h3 className=" line-clamp-1 text-secondary-400 dark:text-primary-200 text-lg text-white-100">
                     {news.title}
                   </h3>
-                  <p className="text-sm text-white-90">{news.description}</p>
+                  <p className="text-sm text-primary-500">{news.description}</p>
 
                   <div className="w-11/12 mx-auto my-2 md:text-lg flex items-center justify-between py-1">
-                    <p className="bg-EerieBlack-400 rounded-md text-white-99 p-1">
+                    <p className="dark:bg-accent-900 bg-secondary-400 text-accent-400 dark:text-primary-50 rounded-md text-white-99 p-1">
                       {news.topic}
                     </p>
 
-                    <p className="text-white-100">
+                    <p className="text-white-100 text-secondary-400 dark:text-primary-500">
                       date : {stampToTime(news.createdAt.seconds)}
                     </p>
                   </div>
