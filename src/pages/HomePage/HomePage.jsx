@@ -14,6 +14,7 @@ import {
   stampToTime,
 } from "../../constants";
 import { fetchNews } from "../../rudex/news/newsActions";
+import { FaDollarSign, FaWallet } from "react-icons/fa6";
 
 function HomePage() {
   //  products state
@@ -37,9 +38,57 @@ function HomePage() {
       {/* top products and reviews section */}
       <TopProductsSection productsData={productsData} />
       {/* top slides */}
-      {/* {slidesInformation.map((info) => (
+      {slidesInformation.map((info) => (
         <Slide key={info.id} {...info} />
-      ))} */}
+      ))}
+      {/* features section */}
+      <div className="mx-auto 2xl:max-w-screen-2xl my-4">
+        <h2 className="text-2xl sm:text-3xl px-4 py-2 sm:px-6 sm:py-5 text-secondary-400 dark:text-primary-50">
+          <span className="border-b-4 border-accent-700">Why Wrist Mall ?</span>
+        </h2>
+
+        <div className="flex flex-col sm:flex-row items-center justify-evenly gap-y-4 px-4 py-2 sm:py-4">
+          <div className="sm:w-1/4 h-64 group xl:gap-y-3 xl:h-52 rounded-xl flex flex-col items-center justify-evenly sm:justify-center px-3 py-2 bg-primary-100/75 dark:bg-secondary-200">
+            <span>
+              <FaWallet className="text-5xl text-accent-900 dark:text-accent-400 cursor-pointer" />
+            </span>
+            <h2 className="xl:text-xl whitespace-nowrap font-semibold relative cursor-pointer text-secondary-400 dark:text-primary-100">
+              <span className="absolute bottom-0 w-full h-1 group-hover:h-2/3 transition-all duration-500 z-0 bg-accent-600 dark:bg-accent-800"></span>
+              <p className="z-10 relative">Timeless Elegance</p>
+            </h2>
+            <p className="text-sm xl:px-4 py-2 text-secondary-400 dark:text-primary-300">
+              At Wrist Mall, discover an exquisite selection of luxury
+              timepieces that exude timeless elegance and sophistication.
+            </p>
+          </div>
+          <div className="sm:w-1/4 h-64 group xl:gap-y-3 xl:h-52 rounded-xl flex flex-col items-center justify-evenly sm:justify-center px-3 py-2 bg-primary-100/75 dark:bg-secondary-200">
+            <span>
+              <TbTruckDelivery className="text-5xl text-accent-900 dark:text-accent-400 cursor-pointer" />
+            </span>
+            <h2 className="xl:text-xl whitespace-nowrap font-semibold relative cursor-pointer text-secondary-400 dark:text-primary-100">
+              <span className="absolute bottom-0 w-full h-1 group-hover:h-2/3 transition-all duration-500 z-0 bg-accent-600 dark:bg-accent-800"></span>
+              <p className="z-10 relative">Unveiling Innovation</p>
+            </h2>
+            <p className="text-sm xl:px-4 py-2 text-secondary-400 dark:text-primary-300">
+              Step into the world of innovation and precision engineering at
+              Wrist Mall. Our shop section features.
+            </p>
+          </div>
+          <div className="sm:w-1/4 h-64 group xl:gap-y-3 xl:h-52 rounded-xl flex flex-col items-center justify-evenly sm:justify-center px-3 py-2 bg-primary-100/75 dark:bg-secondary-200">
+            <span>
+              <FaDollarSign className="text-5xl text-accent-900 dark:text-accent-400 cursor-pointer" />
+            </span>
+            <h2 className="xl:text-xl whitespace-nowrap font-semibold relative cursor-pointer text-secondary-400 dark:text-primary-100">
+              <span className="absolute bottom-0 w-full h-1 group-hover:h-2/3 transition-all duration-500 z-0 bg-accent-600 dark:bg-accent-800"></span>
+              <p className="z-10 relative"> Unmatched Luxury</p>
+            </h2>
+            <p className="text-sm xl:px-4 py-2 text-secondary-400 dark:text-primary-300">
+              ndulge in the epitome of luxury as you peruse the opulent
+              selection of timepieces at Wrist Mall.
+            </p>
+          </div>
+        </div>
+      </div>
       {/* news section */}
       {/* <NewsSection /> */}
       {/* overview section */}
@@ -55,15 +104,15 @@ function TopProductsSection({ productsData }) {
     return (
       <div className="mx-auto 2xl:max-w-screen-2xl">
         {/* tile */}
-        <h2 className="text-start text-3xl text-secondary-400 dark:text-primary-50 px-6 py-4">
+        <h2 className="text-start text-3xl text-secondary-400 dark:text-primary-50 px-4 sm:px-6 py-4">
           <span className="border-b-4 border-accent-700 dark:border-accent-500/25 cursor-pointer">
             Top Products
           </span>
         </h2>
-        <p className="px-4 py-2 sm:hidden dark:text-primary-50">
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repellat
-          perferendis quisquam iste, necessitatibus voluptate maxime. Laborum
-          repudiandae maiores culpa dolorum!
+        <p className="px-5 py-2 sm:hidden dark:text-primary-50">
+          ⌚️ Unleash the adventurer in you with the ProDiver Extreme, built to
+          withstand the elements while exuding rugged charm and reliable
+          performance.
         </p>
         {/* content wrapper */}
         <div

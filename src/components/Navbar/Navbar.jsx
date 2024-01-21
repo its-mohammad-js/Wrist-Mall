@@ -24,9 +24,13 @@ function Navbar() {
   const changeTheme = () => {
     // change theme
     setTimeout(() => {
-      rootEl.className === "dark"
-        ? (rootEl.className = "light")
-        : (rootEl.className = "dark");
+      if (rootEl.className === "dark") {
+        localStorage.setItem("theme", "light");
+        rootEl.className = "light";
+      } else {
+        localStorage.setItem("theme", "dark");
+        rootEl.className = "dark";
+      }
     }, 200);
   };
 

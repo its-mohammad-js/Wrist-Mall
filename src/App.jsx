@@ -28,8 +28,15 @@ function App() {
     const userTheme = window.matchMedia("(prefers-color-scheme: dark)").matches;
     // root element (html)
     const rootEl = document.documentElement;
-    // change app theme to user system theme
-    userTheme ? (rootEl.className = "dark") : (rootEl.className = "light");
+    // last used theme
+    const localTheme = localStorage.getItem("theme");
+    // change theme on mount
+    if (localTheme) {
+      rootEl.className = localTheme;
+    } else {
+      // change app theme to user system theme
+      userTheme ? (rootEl.className = "dark") : (rootEl.className = "light");
+    }
   }, []);
 
   return (

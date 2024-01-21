@@ -8,7 +8,7 @@ function Slide({ backgroundUrl, title, subTitle }) {
   const { opacity } = useScrollOpacityEffect(elementRef);
 
   return (
-    <div className="container mx-auto 2xl:max-w-screen-2xl transition-all relative">
+    <div className="mx-auto 2xl:max-w-screen-2xl transition-all relative">
       {/* background gif */}
       <div data-aos="zoom-in-up" className="transition-all">
         <video
@@ -17,7 +17,7 @@ function Slide({ backgroundUrl, title, subTitle }) {
           autoPlay
           muted
           loop
-          className="w-full h-[600px] md:h-screen object-cover"
+          className="w-full h-[400px] md:h-[80vh] 2xl:max-h-[600px] object-cover"
         >
           <source src={backgroundUrl} />
         </video>
@@ -29,7 +29,7 @@ function Slide({ backgroundUrl, title, subTitle }) {
         style={{
           opacity: opacity,
         }}
-        className="w-full h-full bg-Buff-300 bg-opacity-5 backdrop-blur-md absolute inset-0 transition-all duration-1000"
+        className="w-full h-full bg-accent-50/80 dark:bg-secondary-400/75 backdrop-blur-md absolute inset-0 transition-all duration-1000"
       >
         &nbsp;
       </div>
@@ -38,13 +38,13 @@ function Slide({ backgroundUrl, title, subTitle }) {
       <div className="w-full h-full text-white-90 absolute inset-0 flex flex-col justify-center items-center gap-y-6">
         <span
           data-aos="fade-right"
-          className="text-Buff-300 font-extrabold md:text-2xl"
+          className="text-primary-50 border-b border-accent-400 font-extrabold md:text-2xl"
         >
           {subTitle}
         </span>
         <h2
           data-aos="fade-left"
-          className="text-xl md:text-4xl text-white-100 bg-Buff-500 rounded-md cursor-pointer bg-opacity-5 font-bold px-2 py-1"
+          className="text-left text-xl sm:text-5xl transition-all bg-gradient-to-r from-primary-50 via-accent-400 to-primary-50 dark:from-primary-50 dark:via-accent-600 dark:to-primary-50 font-black inline-block text-transparent bg-clip-text"
         >
           {title}
         </h2>
@@ -53,7 +53,7 @@ function Slide({ backgroundUrl, title, subTitle }) {
           onClick={scrollUp}
           to="/WristMall/Shop"
           data-aos="zoom-in"
-          className="bg-white-90 bg-opacity-20 backdrop-blur-md rounded-md text-white-100-500 px-4 py-2 md:text-2xl"
+          className="bg-accent-50 bg-opacity-20 backdrop-blur-md rounded-md text-white-100-500 px-4 py-2 md:text-2xl"
         >
           Learn More...
         </Link>
