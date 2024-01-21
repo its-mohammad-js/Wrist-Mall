@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import HomePageHero from "../../components/HeroSections/HomePageHero";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchProducts } from "../../rudex/products/productActions";
@@ -9,12 +9,13 @@ import { FaMoneyBillWave, FaStar } from "react-icons/fa";
 import Slide from "../../components/Slides/Slide";
 import {
   categoriesInformation,
+  faqInfo,
   reviewsInfo,
   slidesInformation,
   stampToTime,
 } from "../../constants";
 import { fetchNews } from "../../rudex/news/newsActions";
-import { FaDollarSign, FaWallet } from "react-icons/fa6";
+import { FaDollarSign, FaPlus, FaQ, FaWallet } from "react-icons/fa6";
 
 function HomePage() {
   //  products state
@@ -89,6 +90,8 @@ function HomePage() {
           </div>
         </div>
       </div>
+      {/* faq section */}
+      <FaqSection />
       {/* news section */}
       {/* <NewsSection /> */}
       {/* overview section */}
@@ -102,7 +105,7 @@ export default HomePage;
 function TopProductsSection({ productsData }) {
   if (productsData.length)
     return (
-      <div className="mx-auto 2xl:max-w-screen-2xl">
+      <div className="mx-auto 2xl:max-w-screen-2xl mb-8 md:-mb-2">
         {/* tile */}
         <h2 className="text-start text-3xl text-secondary-400 dark:text-primary-50 px-4 sm:px-6 py-4">
           <span className="border-b-4 border-accent-700 dark:border-accent-500/25 cursor-pointer">
@@ -199,6 +202,78 @@ function TopProductsSection({ productsData }) {
         </div>
       </div>
     );
+}
+
+function FaqSection() {
+  const [answerShow, setAnswer] = useState(null);
+
+  const openAnswerModal = (key) => {
+    if (answerShow === key) {
+      setAnswer(null);
+    } else {
+      setAnswer(key);
+    }
+  };
+
+  return (
+    <div className="mx-auto 2xl:max-w-screen-2xl my-6">
+      <div
+        id="wrapper"
+        className="flex flex-col md:flex-row items-center justify-between sm:h-[600px] px-4 sm:px-6 gap-x-8"
+      >
+        <div className="sm:w-1/3 h-full flex flex-col items-start justify-start gap-y-5 py-2">
+          <h2 className="text-secondary-400 text-5xl dark:text-primary-50">
+            <span className="border-b-4 border-accent-700 dark:border-accent-800">
+              FAQ
+            </span>
+          </h2>
+          <p className="text-secondary-200 dark:text-primary-400 text-sm xl:text-xl">
+            Answer to some questions you might have. Find answers to questions
+            about Wrist Mall, our mission, and the quality of our products.
+            &nbsp;
+            <span className="hidden xl:inline">
+              Learn about placing orders, shipping times, tracking packages, and
+              international shipping options. Discover our return and exchange
+              policies, including eligibility, time frames, and how to initiate
+              a return or exchange.Get information about the watch brands we
+              offer, product availability, and details on specific watch models.
+            </span>
+          </p>
+        </div>
+        <div className="sm:w-2/3 h-full flex flex-col sm:px-6 py-4 justify-evenly">
+          {faqInfo.map(({ question, answer }, index) => (
+            <div key={index} className="">
+              <h2
+                onClick={() => openAnswerModal(index)}
+                className="dark:text-primary-50 hover:dark:text-primary-200 transition-all py-2 cursor-pointer rounded-xl text-sm sm:text-xl gap-x-2 font-bold flex items-center justify-between"
+              >
+                <span>{question}</span>
+                <span
+                  className={`${
+                    answerShow === index && "scale-150 rotate-45"
+                  } transition-all`}
+                >
+                  <FaPlus className="text-accent-700" />
+                </span>
+              </h2>
+
+              <div
+                className={`${
+                  answerShow === index
+                    ? "visible h-24 opacity-100"
+                    : "invisible h-6 opacity-0"
+                } xl:px-2 py-1 transition-all duration-500`}
+              >
+                <p className="dark:text-primary-300 text-xs xl:text-lg">
+                  {answer}
+                </p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
 }
 
 function NewsSection() {

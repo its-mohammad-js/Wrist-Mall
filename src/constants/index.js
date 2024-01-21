@@ -182,6 +182,34 @@ const reviewsInfo = [
   },
 ];
 
+const faqInfo = [
+  {
+    question: "What payment methods does Wrist Mall accept?",
+    answer:
+      "Wrist Mall accepts major credit cards, PayPal, and other electronic payment methods for a secure and convenient checkout process. 💳💸",
+  },
+  {
+    question: "How is shipping handled for Wrist Mall orders?",
+    answer:
+      " Wrist Mall offers fast and reliable shipping options to deliver your watch purchase straight to your doorstep. 🚚✈️",
+  },
+  {
+    question: "Are the watches sold on Wrist Mall authentic and genuine?",
+    answer:
+      "Absolutely! Wrist Mall is committed to providing customers with authentic and genuine watches from renowned brands, ensuring high quality and customer satisfaction. ⌚️💯",
+  },
+  {
+    question: "Can I return a watch if it doesn't meet my expectations?",
+    answer:
+      "Yes, Wrist Mall has a hassle-free return policy for unworn and undamaged watches. If you're not satisfied with your purchase, simply initiate a return within the specified timeframe for a refund or exchange. 👍🔄",
+  },
+  {
+    question: "Does Wrist Mall offer any warranty on purchased watches?",
+    answer:
+      "Certainly! Wrist Mall stands behind the quality of its watches and offers warranty coverage on eligible purchases for added peace of mind. ⌚️🛡️",
+  },
+];
+
 export {
   slidesInformation,
   categoriesInformation,
@@ -198,4 +226,5 @@ export {
   scrollUp,
   brandsinfo,
   reviewsInfo,
+  faqInfo,
 };

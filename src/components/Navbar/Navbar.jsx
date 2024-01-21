@@ -7,6 +7,7 @@ import { FaCartShopping } from "react-icons/fa6";
 import { SignOutUser } from "../../rudex/auth/authActions";
 import { PiSunFill } from "react-icons/pi";
 import { BsFillMoonStarsFill, BsWatch } from "react-icons/bs";
+import { FaArrowLeft } from "react-icons/fa";
 
 function Navbar() {
   const [menuIsOpen, setMenuIsOpen] = useState(false);
@@ -46,7 +47,7 @@ function Navbar() {
     <div className="mx-auto 2xl:max-w-screen-2xl">
       <div
         id="wrapper"
-        className="w-full flex items-center justify-between px-4 py-3 sm:py-4 sm:px-6 bg-accent-100 dark:bg-accent-300 dark:bg-opacity-10"
+        className="w-full flex items-center justify-between relative px-4 py-3 sm:py-4 sm:px-6 bg-accent-100 dark:bg-accent-300 dark:bg-opacity-10"
       >
         {/* logo  */}
         <div className="dark:text-primary-50 flex items-center font-semibold group">
@@ -94,7 +95,7 @@ function Navbar() {
           </Link>
         </div>
 
-        {/* menu btn */}
+        {/* mobile buttons */}
         <div className="sm:hidden flex items-center">
           <button
             onClick={changeTheme}
@@ -105,7 +106,54 @@ function Navbar() {
             <BsFillMoonStarsFill className="hidden dark:block" />
           </button>
 
-          <GiHamburgerMenu className="text-3xl text-accent-500 cursor-pointer" />
+          <button onClick={() => setMenuIsOpen(true)}>
+            <GiHamburgerMenu className="text-3xl text-accent-500 cursor-pointer" />
+          </button>
+        </div>
+
+        {/* mobile menu */}
+        <div
+          className={`${
+            menuIsOpen ? "w-full visible" : "w-0 invisible"
+          } fixed inset-0 h-screen flex z-50 transition-all duration-500`}
+        >
+          <div className="w-3/4 h-full bg-primary-50 dark:bg-secondary-200">
+            <ul
+              className={`${
+                menuIsOpen ? "visible opacity-100" : "invisible opacity-0"
+              } transition-all flex flex-col py-2`}
+            >
+              <div className="dark:text-primary-50 flex items-center font-semibold group px-2 mb-2">
+                <span className="text-3xl sm:text-4xl sm: mx-0.5 group-hover:scale-110 group-hover:rotate-12 transition-all">
+                  <BsWatch className="" />
+                </span>
+                <p className="text-xl sm:text-2xl border-b-[1px] border-accent-900 dark:border-accent-700/100 cursor-pointer">
+                  Wrist
+                  <span className="text-accent-600 dark:text-accent-500">
+                    &nbsp;Mall
+                  </span>
+                </p>
+              </div>
+              {routesInfo.map((route, index) => (
+                <Link
+                  key={index}
+                  to={route.path}
+                  className="px-4 py-1 text-primary-50 text-xl my-2 relative flex items-center gap-x-2 group"
+                >
+                  <FaArrowLeft className="rotate-180" />
+                  {route.title}
+                </Link>
+              ))}
+            </ul>
+          </div>
+          <div
+            onClick={() => setMenuIsOpen(false)}
+            className={`${
+              !menuIsOpen && "opacity-0"
+            } w-1/4 h-full bg-secondary-400 bg-opacity-70`}
+          >
+            back
+          </div>
         </div>
       </div>
     </div>

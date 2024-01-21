@@ -29,7 +29,7 @@ function Slide({ backgroundUrl, title, subTitle }) {
         style={{
           opacity: opacity,
         }}
-        className="w-full h-full bg-accent-50/80 dark:bg-secondary-400/75 backdrop-blur-md absolute inset-0 transition-all duration-1000"
+        className="w-full h-full bg-primary-600 bg-opacity-70 dark:bg-secondary-400/75 backdrop-blur-md absolute inset-0 transition-all duration-1000"
       >
         &nbsp;
       </div>
