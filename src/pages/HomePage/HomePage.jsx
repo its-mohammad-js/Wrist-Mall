@@ -42,6 +42,7 @@ function HomePage() {
       <TopProductsSection productsData={productsData} />
       {/* summary section */}
       <div className="mx-auto 2xl:max-w-screen-2xl">
+        ش
         <div
           id="wrapper"
           className="flex flex-col md:flex-row gap-x-4 xl:h-full items-center justify-between xl:px-8 xl:py-4 px-4 py-2 gap-y-3"
@@ -59,7 +60,7 @@ function HomePage() {
             <h2 className="text-xl xl:text-3xl text-secondary-400 dark:text-primary-50 font-semibold">
               A Watch As Unique As You
             </h2>
-            <p className=" xl:text-2xl text-secondary-300 dark:text-primary-200">
+            <p className="xl:text-2xl text-secondary-300 dark:text-primary-200">
               with{" "}
               <strong className="text-accent-800 border-b-2 border-secondary-400 dark:border-accent-700">
                 10 more years experience in the field
@@ -136,11 +137,11 @@ function HomePage() {
       {/* faq section */}
       <FaqSection />
       {/* bottom slides */}
-      <div className="h-screen overflow-y-auto custome-scroll-parent snap-mandatory">
+      {/* <div className="h-screen overflow-y-auto custome-scroll-parent snap-mandatory">
         {slidesInformation.map((info) => (
           <Slide key={info.id} {...info} />
         ))}
-      </div>
+      </div> */}
     </>
   );
 }
