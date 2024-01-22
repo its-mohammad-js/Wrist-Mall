@@ -8,7 +8,7 @@ function Slide({ backgroundUrl, title, subTitle }) {
   const { opacity } = useScrollOpacityEffect(elementRef);
 
   return (
-    <div className="mx-auto 2xl:max-w-screen-2xl transition-all duration-1000 relative custome-scroll snap-start">
+    <div className="mx-auto 2xl:max-w-screen-2xl transition-all duration-1000 relative custome-scroll">
       {/* background gif */}
       <div className="transition-all">
         <video

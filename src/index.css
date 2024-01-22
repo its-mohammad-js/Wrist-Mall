@@ -14,15 +14,15 @@ html {
 }
 
 .custome-scroll-parent {
-  /* scroll-behavior: smooth; */
-  scroll-snap-type: y proximity;
+  scroll-behavior: smooth;
+  scroll-snap-type: y mandatory;
 }
 .custome-scroll-parent::-webkit-scrollbar {
   display: none;
 }
 
 .custome-scroll {
-  scroll-snap-align: end;
+  scroll-snap-align: start;
   transition: all ease 1s;
 }
 
