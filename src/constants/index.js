@@ -11,13 +11,29 @@ export const slidesInformation = [
       "https://firebasestorage.googleapis.com/v0/b/wristmall-6f3a3.appspot.com/o/gifs%2Fslide%20bg%2001.mp4?alt=media&token=f47e3743-e490-4a41-94c6-bed6857d6cd9",
     subTitle: "A Dramatic Change In",
     title: "Your Style",
+    bottomTitle: "Time to elevate!",
+    mainText:
+      "Explore an exquisite collection of timepieces 🛍️ Find the perfect watch to suit your style and needs, ⌚️ express worldwide delivery 🌍 Shop now and make a statement with your wristwear!",
   },
   {
     id: 1,
     backgroundUrl:
       "https://firebasestorage.googleapis.com/v0/b/wristmall-6f3a3.appspot.com/o/gifs%2Fslide%20bg%2002.mp4?alt=media&token=6a801302-7d1d-4f21-bc0f-979404c73ff6",
-    subTitle: "All Our Products Are ",
+    subTitle: "Our Products Are",
     title: "Unique...",
+    bottomTitle: "Discover classic",
+    mainText:
+      "Browse our app for the latest trends in watches ⏱️ Discover classic, trendy, and smartwatch options for every occasion 🌟 Get personalized recommendations and exclusive deals only on our app 🛒",
+  },
+  {
+    id: 3,
+    backgroundUrl:
+      "https://firebasestorage.googleapis.com/v0/b/wristmall-6f3a3.appspot.com/o/gifs%2Fslide%20bg%2003.mp4?alt=media&token=d38e3e87-678a-4f78-850f-f1fb3968e40b",
+    subTitle: "Time for Your Style",
+    title: "Time Emporium",
+    bottomTitle: "Your ultimate destination",
+    mainText:
+      "Dive into a world of precision and style with our curated watch selection ⌛️ Shop limited edition pieces and timeless classics from renowned watchmakers 🎁 Download the app and start your watch journey today!",
   },
 ];
 

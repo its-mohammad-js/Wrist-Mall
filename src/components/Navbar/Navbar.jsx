@@ -83,11 +83,13 @@ function Navbar() {
         <div className="hidden sm:flex items-center gap-x-4">
           <button
             onClick={changeTheme}
-            className="mx-5 text-3xl text-accent-600 dark:text-primary-50 active:animate-spin"
+            className="mx-5 text-3xl text-accent-600 dark:text-primary-50 hover:scale-125 transition-all"
           >
             <PiSunFill className="dark:hidden" />
 
-            <BsFillMoonStarsFill className="hidden dark:block" />
+            <span className="drop-shadow-2xl sha">
+              <BsFillMoonStarsFill className="hidden dark:block" />
+            </span>
           </button>
 
           <Link className="bg-gradient-to-bl from-primary-50 to-accent-400 dark:from-accent-500 dark:to-primary-500 hover:bg-gradient-to-br px-4 py-2 rounded-full border border-primary-50 dark:border-secondary-400 text-xl font-semibold">
@@ -99,7 +101,7 @@ function Navbar() {
         <div className="sm:hidden flex items-center">
           <button
             onClick={changeTheme}
-            className="mx-5 text-xl text-accent-600 dark:text-primary-50 active:animate-spin"
+            className="mx-5 text-xl text-accent-600 dark:text-primary-50 group"
           >
             <PiSunFill className="dark:hidden" />
 

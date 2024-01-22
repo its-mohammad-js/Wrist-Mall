@@ -40,9 +40,14 @@ function HomePage() {
       <HomePageHero />
       {/* top products and reviews section */}
       <TopProductsSection productsData={productsData} />
+      {/* bottom slides */}
+      <div className="mx-auto 2xl:max-w-screen-2xl flex flex-col md:flex-row px-4 py-2 gap-y-5 gap-x-4 items-center justify-evenly xl:py-6">
+        {slidesInformation.map((info) => (
+          <Slide key={info.id} {...info} />
+        ))}
+      </div>
       {/* summary section */}
       <div className="mx-auto 2xl:max-w-screen-2xl">
-        ش
         <div
           id="wrapper"
           className="flex flex-col md:flex-row gap-x-4 xl:h-full items-center justify-between xl:px-8 xl:py-4 px-4 py-2 gap-y-3"
@@ -136,12 +141,6 @@ function HomePage() {
       <NewsSection />
       {/* faq section */}
       <FaqSection />
-      {/* bottom slides */}
-      {/* <div className="h-screen overflow-y-auto custome-scroll-parent snap-mandatory">
-        {slidesInformation.map((info) => (
-          <Slide key={info.id} {...info} />
-        ))}
-      </div> */}
     </>
   );
 }
@@ -279,7 +278,7 @@ function ExploreSection() {
           <div className="xl:h-96 w-full px-4 py-2 flex flex-col md:flex-row items-center justify-start gap-x-4 gap-y-4">
             {/* watch gallery */}
             <div
-              data-aos-delay="1000"
+              data-aos-delay="200"
               data-aos="fade-up"
               className="grid grid-rows-6 grid-cols-6 gap-x-2 w-full sm:w-1/3 h-full"
             >
@@ -345,7 +344,7 @@ function ExploreSection() {
             </div>
             {/* watch pic */}
             <div
-              data-aos-delay="1200"
+              data-aos-delay="400"
               data-aos="fade-up"
               className="w-full sm:w-1/3 h-full flex items-center justify-center py-2"
             >
@@ -372,7 +371,7 @@ function ExploreSection() {
             </div>
             {/* summary sectrion */}
             <div
-              data-aos-delay="1500"
+              data-aos-delay="600"
               data-aos="fade-up"
               className="w-full sm:w-1/3 h-full relative group"
             >
