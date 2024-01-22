@@ -116,6 +116,8 @@ export const cartPageBgUrl =
 export const exploreSectionBg =
   "https://firebasestorage.googleapis.com/v0/b/wristmall-6f3a3.appspot.com/o/background%20images%2FExpore%20section%20bg%2001.jpg?alt=media&token=dd94d1a2-4065-43d1-8ef4-646c22f51a46";
 
+export const summarySectionPic =
+  "https://firebasestorage.googleapis.com/v0/b/wristmall-6f3a3.appspot.com/o/background%20images%2Fsummary%20section%20bg.webp?alt=media&token=8cdc769c-2157-4322-b268-b73b74dbd1f9";
 const SignInValidationSchema = Yup.object({
   name: Yup.string()
     .required("Name is reduired")

@@ -14,6 +14,7 @@ import {
   reviewsInfo,
   slidesInformation,
   stampToTime,
+  summarySectionPic,
 } from "../../constants";
 import { fetchNews } from "../../rudex/news/newsActions";
 import { FaDollarSign, FaPlus, FaQ, FaWallet } from "react-icons/fa6";
@@ -42,11 +43,49 @@ function HomePage() {
       {/* explore section */}
       <ExploreSection />
       {/* top slides */}
-      {slidesInformation.map((info) => (
-        <Slide key={info.id} {...info} />
-      ))}
-      {/* categories section */}
-      <div className="mx-auto 2xl:max-w-screen-2xl bg-red-400">category</div>
+      <div className="h-screen overflow-y-auto custome-scroll-parent snap-mandatory">
+        {slidesInformation.map((info) => (
+          <Slide key={info.id} {...info} />
+        ))}
+      </div>
+      {/* summary section */}
+      <div className="mx-auto 2xl:max-w-screen-2xl xl:h-96">
+        <div
+          id="wrapper"
+          className="flex flex-col md:flex-row gap-x-4 xl:h-full items-center justify-between xl:px-8 xl:py-4 px-4 py-2 gap-y-3"
+        >
+          <div className="hidden md:block w-1/2 xl:w-1/3 h-full">
+            <img
+              src={summarySectionPic}
+              alt="summary-section-pic"
+              className="h-full w-full object-cover"
+            />
+          </div>
+
+          <div className="xl:w-2/3 h-full xl:px-6 xl:py-3 my-4 xl:my-0 flex flex-col gap-y-3 items-start justify-between">
+            <h2 className="text-xl xl:text-3xl text-secondary-400 dark:text-primary-50 font-semibold">
+              A Watch As Unique As You
+            </h2>
+            <p className=" xl:text-2xl text-secondary-300 dark:text-primary-200">
+              with{" "}
+              <strong className="text-accent-800 border-b-2 border-secondary-400 dark:border-accent-700">
+                10 more years experience in the field
+              </strong>
+              , witching's invests, designs, and new entry manufactures a range
+              of award-wining .
+            </p>
+            <p className="xl:text-2xl text-secondary-300 dark:text-primary-200">
+              Come clinically validated smart health devices and associated
+              apps, Withing's provides an the comfort of home, and can help
+              anyone master long term health goals{" "}
+            </p>
+
+            <button className="px-4 py-2 xl:px-6 xl:py-4 text-lg font-medium bg-accent-800 text-primary-100 hover:bg-accent-600 transition-all">
+              Shop Now
+            </button>
+          </div>
+        </div>
+      </div>
       {/* features section */}
       <div className="mx-auto 2xl:max-w-screen-2xl my-4">
         <h2 className="text-2xl sm:text-3xl px-4 py-2 sm:px-6 sm:py-5 text-secondary-400 dark:text-primary-50">
@@ -240,9 +279,9 @@ function ExploreSection() {
           <div className="xl:h-96 w-full px-4 py-2 flex flex-col md:flex-row items-center justify-start gap-x-4 gap-y-4">
             {/* watch gallery */}
             <div
-              data-aos-delay="500"
+              data-aos-delay="1000"
               data-aos="fade-up"
-              className="grid grid-rows-6 grid-cols-6 gap-x-2 w-full xl:w-1/3 h-full"
+              className="grid grid-rows-6 grid-cols-6 gap-x-2 w-full sm:w-1/3 h-full"
             >
               {/* header card */}
               <div className="bg-secondary-300 rounded-xl col-span-4 row-span-3 flex flex-col justify-evenly mx-2 px-4 py-2 hover:-translate-y-2 transition-all duration-500">
@@ -306,35 +345,48 @@ function ExploreSection() {
             </div>
             {/* watch pic */}
             <div
-              data-aos-delay="700"
+              data-aos-delay="1200"
               data-aos="fade-up"
-              className="w-full xl:w-1/3 h-full flex items-center justify-center py-2"
+              className="w-full sm:w-1/3 h-full flex items-center justify-center py-2"
             >
-              <Slider
-                afterChange={(e) => setSelectedProduct(e)}
-                {...settings}
-                className="w-full h-full"
-              >
-                {productsData.map((product) => (
-                  <img
-                    key={product.id}
-                    src={product.thumbnail}
-                    className="w-full h-80 object-contain"
-                  />
-                ))}
-              </Slider>
+              <div className="w-full h-full relative group">
+                <div className="absolute inset-0 bg-primary-50 rounded-xl transition-all group-hover:bg-opacity-10 duration-700 group-hover:backdrop-blur-sm group-hover:z-10 flex items-center justify-center">
+                  <button className="group-hover:visible group-hover:opacity-100 px-4 py-2 rounded-2xl text-xl hover:text-2xl transition-all duration-700 dark:text-black invisible bg-primary-50 opacity-0">
+                    Watch Detail
+                  </button>
+                </div>
+                <Slider
+                  afterChange={(e) => setSelectedProduct(e)}
+                  {...settings}
+                  className="w-full h-full"
+                >
+                  {productsData.map((product) => (
+                    <img
+                      key={product.id}
+                      src={product.thumbnail}
+                      className="w-full h-80 object-contain"
+                    />
+                  ))}
+                </Slider>
+              </div>
             </div>
             {/* summary sectrion */}
             <div
-              data-aos-delay="1000"
+              data-aos-delay="1500"
               data-aos="fade-up"
-              className="w-full xl:w-1/3 h-full"
+              className="w-full sm:w-1/3 h-full relative group"
             >
               <img
                 src={exploreSectionBg}
                 alt="explore section background"
-                className="w-full h-full object-cover rounded-xl"
+                className="w-full h-full object-cover rounded-xl group"
               />
+
+              <div className="absolute inset-0 bg-accent-500 backdrop-blur-sm group-hover:scale-95 group-hover:backdrop-blur-md transition-all duration-700 bg-opacity-25 rounded-xl flex items-center">
+                <p className="text-center dark:text-primary-50 text-xl cursor-pointer group-hover:scale-90 duration-700 transition-all font-semibold line-clamp-6">
+                  {productsData[selectedProduct].description}
+                </p>
+              </div>
             </div>
           </div>
         </div>

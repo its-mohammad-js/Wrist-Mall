@@ -13,6 +13,19 @@ html {
   scroll-behavior: smooth;
 }
 
+.custome-scroll-parent {
+  /* scroll-behavior: smooth; */
+  scroll-snap-type: y proximity;
+}
+.custome-scroll-parent::-webkit-scrollbar {
+  display: none;
+}
+
+.custome-scroll {
+  scroll-snap-align: end;
+  transition: all ease 1s;
+}
+
 body::-webkit-scrollbar {
   width: 0.5rem;
 }
