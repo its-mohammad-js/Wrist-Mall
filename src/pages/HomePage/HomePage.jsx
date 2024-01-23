@@ -41,13 +41,13 @@ function HomePage() {
       {/* top products and reviews section */}
       <TopProductsSection productsData={productsData} />
       {/* bottom slides */}
-      <div className="mx-auto 2xl:max-w-screen-2xl flex flex-col md:flex-row px-4 py-2 gap-y-5 gap-x-4 items-center justify-evenly xl:py-6">
+      <div className="mx-auto 2xl:max-w-screen-2xl flex flex-col md:flex-row px-4 xl:px-9 py-2 gap-y-5 gap-x-4 items-center justify-between xl:py-6">
         {slidesInformation.map((info) => (
           <Slide key={info.id} {...info} />
         ))}
       </div>
       {/* summary section */}
-      <div className="mx-auto 2xl:max-w-screen-2xl">
+      <div className="mx-auto 2xl:max-w-screen-2xl xl:h-96">
         <div
           id="wrapper"
           className="flex flex-col md:flex-row gap-x-4 xl:h-full items-center justify-between xl:px-8 xl:py-4 px-4 py-2 gap-y-3"
@@ -57,27 +57,26 @@ function HomePage() {
             <img
               src={summarySectionPic}
               alt="summary-section-pic"
-              className="h-full w-full object-cover max-h-80"
+              className="h-full w-full object-cover"
             />
           </div>
 
-          <div className="xl:w-2/3 h-full xl:px-6 xl:py-3 my-4 xl:my-0 flex flex-col gap-y-3 items-start justify-between">
-            <h2 className="text-xl xl:text-3xl text-secondary-400 dark:text-primary-50 font-semibold">
-              A Watch As Unique As You
-            </h2>
-            <p className="xl:text-2xl text-secondary-300 dark:text-primary-200">
-              with{" "}
-              <strong className="text-accent-800 border-b-2 border-secondary-400 dark:border-accent-700">
-                10 more years experience in the field
-              </strong>
-              , witching's invests, designs, and new entry manufactures a range
-              of award-wining .
-            </p>
-            <p className="xl:text-2xl text-secondary-300 dark:text-primary-200">
-              Come clinically validated smart health devices and associated
-              apps, Withing's provides an the comfort of home, and can help
-              anyone master long term health goals{" "}
-            </p>
+          <div className="xl:w-2/3 h-full xl:px-6 xl:py-3 my-4 xl:my-0 flex flex-col items-start justify-between">
+            <div className="">
+              <h2 className="text-xl xl:text-3xl text-secondary-400 dark:text-primary-50 font-semibold">
+                A Watch As Unique As You
+              </h2>
+              <p className="xl:text-2xl text-secondary-300 dark:text-primary-300 mt-4">
+                with{" "}
+                <strong className="text-accent-800 border-b-2 border-secondary-400 dark:border-accent-700">
+                  10 more years experience in the field
+                </strong>
+                , witching's invests, designs, and new entry manufactures a
+                range of award-wining . Come clinically validated smart health
+                devices and associated apps, Withing's provides an the comfort
+                of home, and can help anyone master long term health goals{" "}
+              </p>
+            </div>
 
             <button className="px-4 py-2 xl:px-6 xl:py-4 text-lg font-medium bg-accent-800 text-primary-100 hover:bg-accent-600 transition-all">
               Shop Now
@@ -89,7 +88,7 @@ function HomePage() {
       <ExploreSection />
       {/* features section */}
       <div className="mx-auto 2xl:max-w-screen-2xl my-4 xl:my-8">
-        <h2 className="text-2xl sm:text-3xl px-4 py-2 sm:px-6 sm:py-5 text-secondary-400 dark:text-primary-50">
+        <h2 className="text-2xl sm:text-3xl px-4 py-2 sm:py-5 text-secondary-400 dark:text-primary-50">
           <span className="border-b-4 border-accent-700 dark:border-accent-800">
             Why Wrist Mall ?
           </span>
@@ -141,6 +140,26 @@ function HomePage() {
       <NewsSection />
       {/* faq section */}
       <FaqSection />
+      {/* contact us section */}
+      <div className="mx-auto 2xl:max-w-screen-2xl">
+        {/* header section */}
+        <div className="flex flex-col items-center">
+          <div className="">
+            <h2 className="text-center text-3xl xl:text-6xl text-secondary-400 dark:text-primary-50 font-semibold">
+              <span className="bg-gradient-to-r mx-2 from-secondary-400 via-accent-400 to-secondary-100 dark:from-primary-50 dark:via-accent-600 dark:to-primary-50 inline-block text-transparent bg-clip-text">
+                Your Journey
+              </span>
+              Shouldn't End Here!
+            </h2>
+            <p className="text-center text-sm xl:text-2xl my-6 text-secondary-300 dark:text-primary-300">
+              Follow me on social media to stay tuned on more projects.
+            </p>
+          </div>
+          <button className="text-lg xl:text-xl px-4 py-2 xl:px-8 xl:py-4 bg-secondary-400 text-primary-50 dark:bg-primary-100 duration-500 dark:text-secondary-400 rounded-xl hover:-translate-y-3 transition-all hover:shadow-2xl">
+            stay tuned
+          </button>
+        </div>
+      </div>
     </>
   );
 }
@@ -267,7 +286,7 @@ function ExploreSection() {
       <div className="mx-auto 2xl:max-w-screen-2xl mt-8 mb-2">
         <div id="wrapper" className="flex flex-col items-center">
           {/* title */}
-          <h2 className="text-3xl xl:text-8xl text-center dark:text-primary-200 leading-[3rem] xl:leading-[8rem] cursor-pointer">
+          <h2 className="text-3xl xl:text-7xl text-center dark:text-primary-200 leading-[3rem] xl:leading-[8rem] cursor-pointer">
             Explore{" "}
             <span className="border-b-4 border-accent-700">Largest</span> Watch
             &nbsp;

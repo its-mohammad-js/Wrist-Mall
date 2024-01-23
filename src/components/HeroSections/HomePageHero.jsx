@@ -125,7 +125,7 @@ function WatchSwiper({ topProucts }) {
           {/* description and title (desktop screen) */}
           <div className="text-white w-2/3 hidden md:flex flex-col justify-center items-start h-full">
             <h2 className="text-5xl h-20 text-left w-full transition-all bg-gradient-to-r from-secondary-400 via-accent-400 to-secondary-100 dark:from-primary-50 dark:via-accent-600 dark:to-secondary-400 font-black inline-block text-transparent bg-clip-text">
-              <span className="border-b border-secondary-400 dark:border-primary-50">
+              <span className="border-b border-secondary-400 dark:border-primary-50 whitespace-nowrap">
                 {topProucts[selectedWatch].name}
               </span>
             </h2>
