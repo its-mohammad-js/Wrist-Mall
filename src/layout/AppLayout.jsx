@@ -78,6 +78,7 @@ function AppLayout({ children }) {
       <div className="bg-white dark:bg-secondary-400 min-h-screen">
         <Navbar />
         {children}
+        <Footer />
       </div>
     );
 }

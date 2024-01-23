@@ -141,9 +141,9 @@ function HomePage() {
       {/* faq section */}
       <FaqSection />
       {/* contact us section */}
-      <div className="mx-auto 2xl:max-w-screen-2xl">
+      <div className="mx-auto 2xl:max-w-screen-2xl my-6 xl:my-10 md:h-80">
         {/* header section */}
-        <div className="flex flex-col items-center">
+        <div className="flex flex-col items-center justify-center h-full">
           <div className="">
             <h2 className="text-center text-3xl xl:text-6xl text-secondary-400 dark:text-primary-50 font-semibold">
               <span className="bg-gradient-to-r mx-2 from-secondary-400 via-accent-400 to-secondary-100 dark:from-primary-50 dark:via-accent-600 dark:to-primary-50 inline-block text-transparent bg-clip-text">
@@ -155,7 +155,7 @@ function HomePage() {
               Follow me on social media to stay tuned on more projects.
             </p>
           </div>
-          <button className="text-lg xl:text-xl px-4 py-2 xl:px-8 xl:py-4 bg-secondary-400 text-primary-50 dark:bg-primary-100 duration-500 dark:text-secondary-400 rounded-xl hover:-translate-y-3 transition-all hover:shadow-2xl">
+          <button className="text-lg xl:text-xl px-4 py-2 xl:px-8 xl:py-4 bg-secondary-400 text-primary-50 dark:bg-primary-100 duration-500 dark:text-secondary-400 rounded-xl hover:-translate-y-3 transition-all hover:shadow-2xl dark:shadow-accent-500">
             stay tuned
           </button>
         </div>
